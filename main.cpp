@@ -31,7 +31,7 @@
 #define UARTRX P1_4
 
 #define DEBUG 1
-#define BUF_SIZE 16
+#define BUF_SIZE 20
 
 /********************************** Globals ***********************************/
 /*
@@ -48,24 +48,27 @@ Thread *thread_led1;									/* Thread for LED1 */
 Thread *thread_led2;									/* Thread for LED2 */
 Thread *thread_com;										/* Thread for communication */
 
-float value_led1;
-float value_led2;
+float value;
 
 /********************************* Functions **********************************/
 void com_led_1(void)
 {
+	float local_value = value;
+	
 	while (1)
 	{
-		led_1.write(value_led1);
+		led_1.write(local_value);
 		Thread::wait(10);
 	}
 }
 
 void com_led_2(void)
 {
+	float local_value = value;
+	
 	while (1)
 	{
-		led_2.write(value_led2);
+		led_2.write(local_value);
 		Thread::wait(10);
 	}
 }
@@ -144,7 +147,7 @@ void com_communication(void)
 				device.putc(0x06);
 				
 #if DEBUG
-				device.printf("%s\n", receiver_buffer);
+				device.printf("#%s\n", receiver_buffer);
 #endif
 				
 				i = 0;
@@ -187,16 +190,20 @@ void com_communication(void)
 				/* LED1 Command */
 				if (strncmp(command_buffer, "LED1", BUF_SIZE*sizeof(char)) == 0)
 				{
-					value_led1 = strtof(data_buffer, &ptr) / 100;
+					value = strtof(data_buffer, &ptr) / 100;
 					
 #if DEBUG
-					device.printf("LED1 Value: %.2f%%\n", value_led1 * 100);
+					device.printf("LED1 Value: %.2f%%\n", value * 100);
 #endif
 					
-					if (thread_led1 == NULL)
+					if (thread_led1 != NULL)
 					{
-						thread_led1 = new Thread();
+						thread_led1->terminate();
+						delete thread_led1;
+						thread_led1 = NULL;
 					}
+					
+					thread_led1 = new Thread();
 					
 					status = thread_led1->start(com_led_1);
 					if (status != osOK)
@@ -208,16 +215,20 @@ void com_communication(void)
 				/* LED2 Command */
 				else if (strncmp(command_buffer, "LED2", BUF_SIZE*sizeof(char)) == 0)
 				{
-					value_led2 = strtof(data_buffer, &ptr) / 100;
+					value = strtof(data_buffer, &ptr) / 100;
 					
 #if DEBUG
-					device.printf("LED2 Value: %.2f%%\n", value_led2 * 100);
+					device.printf("LED2 Value: %.2f%%\n", value * 100);
 #endif
 					
-					if (thread_led2 == NULL)
+					if (thread_led2 != NULL)
 					{
-						thread_led2 = new Thread();
+						thread_led2->terminate();
+						delete thread_led2;
+						thread_led2 = NULL;
 					}
+					
+					thread_led2 = new Thread();
 					
 					status = thread_led2->start(com_led_2);
 					if (status != osOK)
@@ -248,7 +259,10 @@ void com_communication(void)
 					}
 				} // stncmp RES
 				
+#if DEBUG
 				device.printf("\n");
+#endif
+				
 				Thread::wait(10);
 			} // receiver_char == #
 		} // device.readable()
