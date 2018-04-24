@@ -1,0 +1,1876 @@
+WP-Linux @ sebastian : code > make
+----------------------------------------------------------------------
+Building with DEBUG Symbols
+
+mbed compile -m XMC_4500_RELAX_KIT -t GCC_ARM -N main --profile mbed-os/tools/profiles/debug.json
+Building project main (XMC_4500_RELAX_KIT, GCC_ARM)
+Scan: .
+Scan: env
+Scan: mbed
+Scan: FEATURE_LWIP
+Compile [100.0%]: main.cpp
+[Error] main.cpp@228,134: no matching function for call to 'callback(void (&)(uint32_t*, uint32_t*, uint32_t*), uint32_t*, uint32_t*, uint32_t*)'
+[Error] main.cpp@242,134: no matching function for call to 'callback(void (&)(uint32_t*, uint32_t*, uint32_t*), uint32_t*, uint32_t*, uint32_t*)'
+[ERROR] ./main.cpp: In function 'void com_communication()':
+./main.cpp:228:134: error: no matching function for call to 'callback(void (&)(uint32_t*, uint32_t*, uint32_t*), uint32_t*, uint32_t*, uint32_t*)'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3539:15: note: candidate: template<class R> mbed::Callback<R()> mbed::callback(R (*)())
+ Callback<R()> callback(R (*func)() = 0) {
+               ^
+./mbed-os/platform/Callback.h:3539:15: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   candidate expects 0 arguments, 3 provided
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3549:15: note: candidate: template<class R> mbed::Callback<R()> mbed::callback(const mbed::Callback<R()>&)
+ Callback<R()> callback(const Callback<R()> &func) {
+               ^
+./mbed-os/platform/Callback.h:3549:15: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'const mbed::Callback<R()>' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3560:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(U*, R (T::*)())
+ Callback<R()> callback(U *obj, R (T::*method)()) {
+               ^
+./mbed-os/platform/Callback.h:3560:15: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'R (T::*)()' and 'uint32_t* {aka long unsigned int*}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3571:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(const U*, R (T::*)() const)
+ Callback<R()> callback(const U *obj, R (T::*method)() const) {
+               ^
+./mbed-os/platform/Callback.h:3571:15: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3582:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(volatile U*, R (T::*)() volatile)
+ Callback<R()> callback(volatile U *obj, R (T::*method)() volatile) {
+               ^
+./mbed-os/platform/Callback.h:3582:15: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3593:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(const volatile U*, R (T::*)() const volatile)
+ Callback<R()> callback(const volatile U *obj, R (T::*method)() const volatile) {
+               ^
+./mbed-os/platform/Callback.h:3593:15: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3604:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(R (*)(T*), U*)
+ Callback<R()> callback(R (*func)(T*), U *arg) {
+               ^
+./mbed-os/platform/Callback.h:3604:15: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   candidate expects 1 argument, 3 provided
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3615:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(R (*)(const T*), const U*)
+ Callback<R()> callback(R (*func)(const T*), const U *arg) {
+               ^
+./mbed-os/platform/Callback.h:3615:15: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3626:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(R (*)(volatile T*), volatile U*)
+ Callback<R()> callback(R (*func)(volatile T*), volatile U *arg) {
+               ^
+./mbed-os/platform/Callback.h:3626:15: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3637:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(R (*)(const volatile T*), const volatile U*)
+ Callback<R()> callback(R (*func)(const volatile T*), const volatile U *arg) {
+               ^
+./mbed-os/platform/Callback.h:3637:15: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3652:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(U*, R (*)(T*))
+ Callback<R()> callback(U *obj, R (*func)(T*)) {
+               ^
+./mbed-os/platform/Callback.h:3652:15: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'R(T*)' and 'uint32_t {aka long unsigned int}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3667:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(const U*, R (*)(const T*))
+ Callback<R()> callback(const U *obj, R (*func)(const T*)) {
+               ^
+./mbed-os/platform/Callback.h:3667:15: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3682:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(volatile U*, R (*)(volatile T*))
+ Callback<R()> callback(volatile U *obj, R (*func)(volatile T*)) {
+               ^
+./mbed-os/platform/Callback.h:3682:15: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3697:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(const volatile U*, R (*)(const volatile T*))
+ Callback<R()> callback(const volatile U *obj, R (*func)(const volatile T*)) {
+               ^
+./mbed-os/platform/Callback.h:3697:15: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3708:17: note: candidate: template<class R, class A0> mbed::Callback<R(A0)> mbed::callback(R (*)(A0))
+ Callback<R(A0)> callback(R (*func)(A0) = 0) {
+                 ^
+./mbed-os/platform/Callback.h:3708:17: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   candidate expects 1 argument, 3 provided
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3718:17: note: candidate: template<class R, class A0> mbed::Callback<R(A0)> mbed::callback(const mbed::Callback<R(A0)>&)
+ Callback<R(A0)> callback(const Callback<R(A0)> &func) {
+                 ^
+./mbed-os/platform/Callback.h:3718:17: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'const mbed::Callback<R(A0)>' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3729:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(U*, R (T::*)(A0))
+ Callback<R(A0)> callback(U *obj, R (T::*method)(A0)) {
+                 ^
+./mbed-os/platform/Callback.h:3729:17: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'R (T::*)(A0)' and 'uint32_t* {aka long unsigned int*}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3740:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(const U*, R (T::*)(A0) const)
+ Callback<R(A0)> callback(const U *obj, R (T::*method)(A0) const) {
+                 ^
+./mbed-os/platform/Callback.h:3740:17: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3751:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(volatile U*, R (T::*)(A0) volatile)
+ Callback<R(A0)> callback(volatile U *obj, R (T::*method)(A0) volatile) {
+                 ^
+./mbed-os/platform/Callback.h:3751:17: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3762:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(const volatile U*, R (T::*)(A0) const volatile)
+ Callback<R(A0)> callback(const volatile U *obj, R (T::*method)(A0) const volatile) {
+                 ^
+./mbed-os/platform/Callback.h:3762:17: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3773:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(R (*)(T*, A0), U*)
+ Callback<R(A0)> callback(R (*func)(T*, A0), U *arg) {
+                 ^
+./mbed-os/platform/Callback.h:3773:17: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   candidate expects 2 arguments, 3 provided
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3784:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(R (*)(const T*, A0), const U*)
+ Callback<R(A0)> callback(R (*func)(const T*, A0), const U *arg) {
+                 ^
+./mbed-os/platform/Callback.h:3784:17: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3795:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(R (*)(volatile T*, A0), volatile U*)
+ Callback<R(A0)> callback(R (*func)(volatile T*, A0), volatile U *arg) {
+                 ^
+./mbed-os/platform/Callback.h:3795:17: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3806:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(R (*)(const volatile T*, A0), const volatile U*)
+ Callback<R(A0)> callback(R (*func)(const volatile T*, A0), const volatile U *arg) {
+                 ^
+./mbed-os/platform/Callback.h:3806:17: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3821:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(U*, R (*)(T*, A0))
+ Callback<R(A0)> callback(U *obj, R (*func)(T*, A0)) {
+                 ^
+./mbed-os/platform/Callback.h:3821:17: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'R(T*, A0)' and 'uint32_t {aka long unsigned int}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3836:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(const U*, R (*)(const T*, A0))
+ Callback<R(A0)> callback(const U *obj, R (*func)(const T*, A0)) {
+                 ^
+./mbed-os/platform/Callback.h:3836:17: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3851:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(volatile U*, R (*)(volatile T*, A0))
+ Callback<R(A0)> callback(volatile U *obj, R (*func)(volatile T*, A0)) {
+                 ^
+./mbed-os/platform/Callback.h:3851:17: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3866:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(const volatile U*, R (*)(const volatile T*, A0))
+ Callback<R(A0)> callback(const volatile U *obj, R (*func)(const volatile T*, A0)) {
+                 ^
+./mbed-os/platform/Callback.h:3866:17: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3877:21: note: candidate: template<class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(R (*)(A0, A1))
+ Callback<R(A0, A1)> callback(R (*func)(A0, A1) = 0) {
+                     ^
+./mbed-os/platform/Callback.h:3877:21: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   candidate expects 2 arguments, 3 provided
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3887:21: note: candidate: template<class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(const mbed::Callback<R(A0, A1)>&)
+ Callback<R(A0, A1)> callback(const Callback<R(A0, A1)> &func) {
+                     ^
+./mbed-os/platform/Callback.h:3887:21: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'const mbed::Callback<R(A0, A1)>' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3898:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(U*, R (T::*)(A0, A1))
+ Callback<R(A0, A1)> callback(U *obj, R (T::*method)(A0, A1)) {
+                     ^
+./mbed-os/platform/Callback.h:3898:21: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'R (T::*)(A0, A1)' and 'uint32_t* {aka long unsigned int*}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3909:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(const U*, R (T::*)(A0, A1) const)
+ Callback<R(A0, A1)> callback(const U *obj, R (T::*method)(A0, A1) const) {
+                     ^
+./mbed-os/platform/Callback.h:3909:21: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3920:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(volatile U*, R (T::*)(A0, A1) volatile)
+ Callback<R(A0, A1)> callback(volatile U *obj, R (T::*method)(A0, A1) volatile) {
+                     ^
+./mbed-os/platform/Callback.h:3920:21: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3931:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(const volatile U*, R (T::*)(A0, A1) const volatile)
+ Callback<R(A0, A1)> callback(const volatile U *obj, R (T::*method)(A0, A1) const volatile) {
+                     ^
+./mbed-os/platform/Callback.h:3931:21: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3942:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(R (*)(T*, A0, A1), U*)
+ Callback<R(A0, A1)> callback(R (*func)(T*, A0, A1), U *arg) {
+                     ^
+./mbed-os/platform/Callback.h:3942:21: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   candidate expects 2 arguments, 4 provided
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3953:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(R (*)(const T*, A0, A1), const U*)
+ Callback<R(A0, A1)> callback(R (*func)(const T*, A0, A1), const U *arg) {
+                     ^
+./mbed-os/platform/Callback.h:3953:21: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3964:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(R (*)(volatile T*, A0, A1), volatile U*)
+ Callback<R(A0, A1)> callback(R (*func)(volatile T*, A0, A1), volatile U *arg) {
+                     ^
+./mbed-os/platform/Callback.h:3964:21: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3975:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(R (*)(const volatile T*, A0, A1), const volatile U*)
+ Callback<R(A0, A1)> callback(R (*func)(const volatile T*, A0, A1), const volatile U *arg) {
+                     ^
+./mbed-os/platform/Callback.h:3975:21: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3990:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(U*, R (*)(T*, A0, A1))
+ Callback<R(A0, A1)> callback(U *obj, R (*func)(T*, A0, A1)) {
+                     ^
+./mbed-os/platform/Callback.h:3990:21: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'R(T*, A0, A1)' and 'uint32_t {aka long unsigned int}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4005:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(const U*, R (*)(const T*, A0, A1))
+ Callback<R(A0, A1)> callback(const U *obj, R (*func)(const T*, A0, A1)) {
+                     ^
+./mbed-os/platform/Callback.h:4005:21: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4020:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(volatile U*, R (*)(volatile T*, A0, A1))
+ Callback<R(A0, A1)> callback(volatile U *obj, R (*func)(volatile T*, A0, A1)) {
+                     ^
+./mbed-os/platform/Callback.h:4020:21: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4035:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(const volatile U*, R (*)(const volatile T*, A0, A1))
+ Callback<R(A0, A1)> callback(const volatile U *obj, R (*func)(const volatile T*, A0, A1)) {
+                     ^
+./mbed-os/platform/Callback.h:4035:21: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4046:25: note: candidate: template<class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(R (*)(A0, A1, A2))
+ Callback<R(A0, A1, A2)> callback(R (*func)(A0, A1, A2) = 0) {
+                         ^
+./mbed-os/platform/Callback.h:4046:25: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   candidate expects 1 argument, 4 provided
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4056:25: note: candidate: template<class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(const mbed::Callback<R(A0, A1, A2)>&)
+ Callback<R(A0, A1, A2)> callback(const Callback<R(A0, A1, A2)> &func) {
+                         ^
+./mbed-os/platform/Callback.h:4056:25: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'const mbed::Callback<R(A0, A1, A2)>' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4067:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(U*, R (T::*)(A0, A1, A2))
+ Callback<R(A0, A1, A2)> callback(U *obj, R (T::*method)(A0, A1, A2)) {
+                         ^
+./mbed-os/platform/Callback.h:4067:25: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'R (T::*)(A0, A1, A2)' and 'uint32_t* {aka long unsigned int*}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4078:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(const U*, R (T::*)(A0, A1, A2) const)
+ Callback<R(A0, A1, A2)> callback(const U *obj, R (T::*method)(A0, A1, A2) const) {
+                         ^
+./mbed-os/platform/Callback.h:4078:25: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4089:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(volatile U*, R (T::*)(A0, A1, A2) volatile)
+ Callback<R(A0, A1, A2)> callback(volatile U *obj, R (T::*method)(A0, A1, A2) volatile) {
+                         ^
+./mbed-os/platform/Callback.h:4089:25: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4100:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(const volatile U*, R (T::*)(A0, A1, A2) const volatile)
+ Callback<R(A0, A1, A2)> callback(const volatile U *obj, R (T::*method)(A0, A1, A2) const volatile) {
+                         ^
+./mbed-os/platform/Callback.h:4100:25: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4111:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(R (*)(T*, A0, A1, A2), U*)
+ Callback<R(A0, A1, A2)> callback(R (*func)(T*, A0, A1, A2), U *arg) {
+                         ^
+./mbed-os/platform/Callback.h:4111:25: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   candidate expects 4 arguments, 3 provided
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4122:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(R (*)(const T*, A0, A1, A2), const U*)
+ Callback<R(A0, A1, A2)> callback(R (*func)(const T*, A0, A1, A2), const U *arg) {
+                         ^
+./mbed-os/platform/Callback.h:4122:25: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4133:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(R (*)(volatile T*, A0, A1, A2), volatile U*)
+ Callback<R(A0, A1, A2)> callback(R (*func)(volatile T*, A0, A1, A2), volatile U *arg) {
+                         ^
+./mbed-os/platform/Callback.h:4133:25: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4144:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(R (*)(const volatile T*, A0, A1, A2), const volatile U*)
+ Callback<R(A0, A1, A2)> callback(R (*func)(const volatile T*, A0, A1, A2), const volatile U *arg) {
+                         ^
+./mbed-os/platform/Callback.h:4144:25: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4159:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(U*, R (*)(T*, A0, A1, A2))
+ Callback<R(A0, A1, A2)> callback(U *obj, R (*func)(T*, A0, A1, A2)) {
+                         ^
+./mbed-os/platform/Callback.h:4159:25: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'R(T*, A0, A1, A2)' and 'uint32_t {aka long unsigned int}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4174:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(const U*, R (*)(const T*, A0, A1, A2))
+ Callback<R(A0, A1, A2)> callback(const U *obj, R (*func)(const T*, A0, A1, A2)) {
+                         ^
+./mbed-os/platform/Callback.h:4174:25: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4189:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(volatile U*, R (*)(volatile T*, A0, A1, A2))
+ Callback<R(A0, A1, A2)> callback(volatile U *obj, R (*func)(volatile T*, A0, A1, A2)) {
+                         ^
+./mbed-os/platform/Callback.h:4189:25: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4204:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(const volatile U*, R (*)(const volatile T*, A0, A1, A2))
+ Callback<R(A0, A1, A2)> callback(const volatile U *obj, R (*func)(const volatile T*, A0, A1, A2)) {
+                         ^
+./mbed-os/platform/Callback.h:4204:25: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4215:29: note: candidate: template<class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(R (*)(A0, A1, A2, A3))
+ Callback<R(A0, A1, A2, A3)> callback(R (*func)(A0, A1, A2, A3) = 0) {
+                             ^
+./mbed-os/platform/Callback.h:4215:29: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   candidate expects 4 arguments, 3 provided
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4225:29: note: candidate: template<class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(const mbed::Callback<R(A0, A1, A2, A3)>&)
+ Callback<R(A0, A1, A2, A3)> callback(const Callback<R(A0, A1, A2, A3)> &func) {
+                             ^
+./mbed-os/platform/Callback.h:4225:29: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'const mbed::Callback<R(A0, A1, A2, A3)>' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4236:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(U*, R (T::*)(A0, A1, A2, A3))
+ Callback<R(A0, A1, A2, A3)> callback(U *obj, R (T::*method)(A0, A1, A2, A3)) {
+                             ^
+./mbed-os/platform/Callback.h:4236:29: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'R (T::*)(A0, A1, A2, A3)' and 'uint32_t* {aka long unsigned int*}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4247:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(const U*, R (T::*)(A0, A1, A2, A3) const)
+ Callback<R(A0, A1, A2, A3)> callback(const U *obj, R (T::*method)(A0, A1, A2, A3) const) {
+                             ^
+./mbed-os/platform/Callback.h:4247:29: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4258:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(volatile U*, R (T::*)(A0, A1, A2, A3) volatile)
+ Callback<R(A0, A1, A2, A3)> callback(volatile U *obj, R (T::*method)(A0, A1, A2, A3) volatile) {
+                             ^
+./mbed-os/platform/Callback.h:4258:29: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4269:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(const volatile U*, R (T::*)(A0, A1, A2, A3) const volatile)
+ Callback<R(A0, A1, A2, A3)> callback(const volatile U *obj, R (T::*method)(A0, A1, A2, A3) const volatile) {
+                             ^
+./mbed-os/platform/Callback.h:4269:29: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4280:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(R (*)(T*, A0, A1, A2, A3), U*)
+ Callback<R(A0, A1, A2, A3)> callback(R (*func)(T*, A0, A1, A2, A3), U *arg) {
+                             ^
+./mbed-os/platform/Callback.h:4280:29: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   candidate expects 5 arguments, 3 provided
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4291:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(R (*)(const T*, A0, A1, A2, A3), const U*)
+ Callback<R(A0, A1, A2, A3)> callback(R (*func)(const T*, A0, A1, A2, A3), const U *arg) {
+                             ^
+./mbed-os/platform/Callback.h:4291:29: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4302:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(R (*)(volatile T*, A0, A1, A2, A3), volatile U*)
+ Callback<R(A0, A1, A2, A3)> callback(R (*func)(volatile T*, A0, A1, A2, A3), volatile U *arg) {
+                             ^
+./mbed-os/platform/Callback.h:4302:29: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4313:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(R (*)(const volatile T*, A0, A1, A2, A3), const volatile U*)
+ Callback<R(A0, A1, A2, A3)> callback(R (*func)(const volatile T*, A0, A1, A2, A3), const volatile U *arg) {
+                             ^
+./mbed-os/platform/Callback.h:4313:29: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4328:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(U*, R (*)(T*, A0, A1, A2, A3))
+ Callback<R(A0, A1, A2, A3)> callback(U *obj, R (*func)(T*, A0, A1, A2, A3)) {
+                             ^
+./mbed-os/platform/Callback.h:4328:29: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'R(T*, A0, A1, A2, A3)' and 'uint32_t {aka long unsigned int}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4343:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(const U*, R (*)(const T*, A0, A1, A2, A3))
+ Callback<R(A0, A1, A2, A3)> callback(const U *obj, R (*func)(const T*, A0, A1, A2, A3)) {
+                             ^
+./mbed-os/platform/Callback.h:4343:29: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4358:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(volatile U*, R (*)(volatile T*, A0, A1, A2, A3))
+ Callback<R(A0, A1, A2, A3)> callback(volatile U *obj, R (*func)(volatile T*, A0, A1, A2, A3)) {
+                             ^
+./mbed-os/platform/Callback.h:4358:29: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4373:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(const volatile U*, R (*)(const volatile T*, A0, A1, A2, A3))
+ Callback<R(A0, A1, A2, A3)> callback(const volatile U *obj, R (*func)(const volatile T*, A0, A1, A2, A3)) {
+                             ^
+./mbed-os/platform/Callback.h:4373:29: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4384:33: note: candidate: template<class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(R (*)(A0, A1, A2, A3, A4))
+ Callback<R(A0, A1, A2, A3, A4)> callback(R (*func)(A0, A1, A2, A3, A4) = 0) {
+                                 ^
+./mbed-os/platform/Callback.h:4384:33: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   candidate expects 5 arguments, 3 provided
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4394:33: note: candidate: template<class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(const mbed::Callback<R(A0, A1, A2, A3, A4)>&)
+ Callback<R(A0, A1, A2, A3, A4)> callback(const Callback<R(A0, A1, A2, A3, A4)> &func) {
+                                 ^
+./mbed-os/platform/Callback.h:4394:33: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'const mbed::Callback<R(A0, A1, A2, A3, A4)>' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4405:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(U*, R (T::*)(A0, A1, A2, A3, A4))
+ Callback<R(A0, A1, A2, A3, A4)> callback(U *obj, R (T::*method)(A0, A1, A2, A3, A4)) {
+                                 ^
+./mbed-os/platform/Callback.h:4405:33: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'R (T::*)(A0, A1, A2, A3, A4)' and 'uint32_t* {aka long unsigned int*}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4416:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(const U*, R (T::*)(A0, A1, A2, A3, A4) const)
+ Callback<R(A0, A1, A2, A3, A4)> callback(const U *obj, R (T::*method)(A0, A1, A2, A3, A4) const) {
+                                 ^
+./mbed-os/platform/Callback.h:4416:33: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4427:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(volatile U*, R (T::*)(A0, A1, A2, A3, A4) volatile)
+ Callback<R(A0, A1, A2, A3, A4)> callback(volatile U *obj, R (T::*method)(A0, A1, A2, A3, A4) volatile) {
+                                 ^
+./mbed-os/platform/Callback.h:4427:33: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4438:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(const volatile U*, R (T::*)(A0, A1, A2, A3, A4) const volatile)
+ Callback<R(A0, A1, A2, A3, A4)> callback(const volatile U *obj, R (T::*method)(A0, A1, A2, A3, A4) const volatile) {
+                                 ^
+./mbed-os/platform/Callback.h:4438:33: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4449:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(R (*)(T*, A0, A1, A2, A3, A4), U*)
+ Callback<R(A0, A1, A2, A3, A4)> callback(R (*func)(T*, A0, A1, A2, A3, A4), U *arg) {
+                                 ^
+./mbed-os/platform/Callback.h:4449:33: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   candidate expects 6 arguments, 3 provided
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4460:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(R (*)(const T*, A0, A1, A2, A3, A4), const U*)
+ Callback<R(A0, A1, A2, A3, A4)> callback(R (*func)(const T*, A0, A1, A2, A3, A4), const U *arg) {
+                                 ^
+./mbed-os/platform/Callback.h:4460:33: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4471:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(R (*)(volatile T*, A0, A1, A2, A3, A4), volatile U*)
+ Callback<R(A0, A1, A2, A3, A4)> callback(R (*func)(volatile T*, A0, A1, A2, A3, A4), volatile U *arg) {
+                                 ^
+./mbed-os/platform/Callback.h:4471:33: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4482:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(R (*)(const volatile T*, A0, A1, A2, A3, A4), const volatile U*)
+ Callback<R(A0, A1, A2, A3, A4)> callback(R (*func)(const volatile T*, A0, A1, A2, A3, A4), const volatile U *arg) {
+                                 ^
+./mbed-os/platform/Callback.h:4482:33: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4497:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(U*, R (*)(T*, A0, A1, A2, A3, A4))
+ Callback<R(A0, A1, A2, A3, A4)> callback(U *obj, R (*func)(T*, A0, A1, A2, A3, A4)) {
+                                 ^
+./mbed-os/platform/Callback.h:4497:33: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   mismatched types 'R(T*, A0, A1, A2, A3, A4)' and 'uint32_t {aka long unsigned int}'
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4512:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(const U*, R (*)(const T*, A0, A1, A2, A3, A4))
+ Callback<R(A0, A1, A2, A3, A4)> callback(const U *obj, R (*func)(const T*, A0, A1, A2, A3, A4)) {
+                                 ^
+./mbed-os/platform/Callback.h:4512:33: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4527:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(volatile U*, R (*)(volatile T*, A0, A1, A2, A3, A4))
+ Callback<R(A0, A1, A2, A3, A4)> callback(volatile U *obj, R (*func)(volatile T*, A0, A1, A2, A3, A4)) {
+                                 ^
+./mbed-os/platform/Callback.h:4527:33: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4542:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(const volatile U*, R (*)(const volatile T*, A0, A1, A2, A3, A4))
+ Callback<R(A0, A1, A2, A3, A4)> callback(const volatile U *obj, R (*func)(const volatile T*, A0, A1, A2, A3, A4)) {
+                                 ^
+./mbed-os/platform/Callback.h:4542:33: note:   template argument deduction/substitution failed:
+./main.cpp:228:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led1->start(callback(com_led_1, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+./main.cpp:242:134: error: no matching function for call to 'callback(void (&)(uint32_t*, uint32_t*, uint32_t*), uint32_t*, uint32_t*, uint32_t*)'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3539:15: note: candidate: template<class R> mbed::Callback<R()> mbed::callback(R (*)())
+ Callback<R()> callback(R (*func)() = 0) {
+               ^
+./mbed-os/platform/Callback.h:3539:15: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   candidate expects 0 arguments, 3 provided
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3549:15: note: candidate: template<class R> mbed::Callback<R()> mbed::callback(const mbed::Callback<R()>&)
+ Callback<R()> callback(const Callback<R()> &func) {
+               ^
+./mbed-os/platform/Callback.h:3549:15: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'const mbed::Callback<R()>' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3560:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(U*, R (T::*)())
+ Callback<R()> callback(U *obj, R (T::*method)()) {
+               ^
+./mbed-os/platform/Callback.h:3560:15: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'R (T::*)()' and 'uint32_t* {aka long unsigned int*}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3571:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(const U*, R (T::*)() const)
+ Callback<R()> callback(const U *obj, R (T::*method)() const) {
+               ^
+./mbed-os/platform/Callback.h:3571:15: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3582:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(volatile U*, R (T::*)() volatile)
+ Callback<R()> callback(volatile U *obj, R (T::*method)() volatile) {
+               ^
+./mbed-os/platform/Callback.h:3582:15: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3593:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(const volatile U*, R (T::*)() const volatile)
+ Callback<R()> callback(const volatile U *obj, R (T::*method)() const volatile) {
+               ^
+./mbed-os/platform/Callback.h:3593:15: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3604:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(R (*)(T*), U*)
+ Callback<R()> callback(R (*func)(T*), U *arg) {
+               ^
+./mbed-os/platform/Callback.h:3604:15: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   candidate expects 1 argument, 3 provided
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3615:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(R (*)(const T*), const U*)
+ Callback<R()> callback(R (*func)(const T*), const U *arg) {
+               ^
+./mbed-os/platform/Callback.h:3615:15: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3626:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(R (*)(volatile T*), volatile U*)
+ Callback<R()> callback(R (*func)(volatile T*), volatile U *arg) {
+               ^
+./mbed-os/platform/Callback.h:3626:15: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3637:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(R (*)(const volatile T*), const volatile U*)
+ Callback<R()> callback(R (*func)(const volatile T*), const volatile U *arg) {
+               ^
+./mbed-os/platform/Callback.h:3637:15: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3652:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(U*, R (*)(T*))
+ Callback<R()> callback(U *obj, R (*func)(T*)) {
+               ^
+./mbed-os/platform/Callback.h:3652:15: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'R(T*)' and 'uint32_t {aka long unsigned int}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3667:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(const U*, R (*)(const T*))
+ Callback<R()> callback(const U *obj, R (*func)(const T*)) {
+               ^
+./mbed-os/platform/Callback.h:3667:15: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3682:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(volatile U*, R (*)(volatile T*))
+ Callback<R()> callback(volatile U *obj, R (*func)(volatile T*)) {
+               ^
+./mbed-os/platform/Callback.h:3682:15: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3697:15: note: candidate: template<class T, class U, class R> mbed::Callback<R()> mbed::callback(const volatile U*, R (*)(const volatile T*))
+ Callback<R()> callback(const volatile U *obj, R (*func)(const volatile T*)) {
+               ^
+./mbed-os/platform/Callback.h:3697:15: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3708:17: note: candidate: template<class R, class A0> mbed::Callback<R(A0)> mbed::callback(R (*)(A0))
+ Callback<R(A0)> callback(R (*func)(A0) = 0) {
+                 ^
+./mbed-os/platform/Callback.h:3708:17: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   candidate expects 1 argument, 3 provided
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3718:17: note: candidate: template<class R, class A0> mbed::Callback<R(A0)> mbed::callback(const mbed::Callback<R(A0)>&)
+ Callback<R(A0)> callback(const Callback<R(A0)> &func) {
+                 ^
+./mbed-os/platform/Callback.h:3718:17: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'const mbed::Callback<R(A0)>' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3729:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(U*, R (T::*)(A0))
+ Callback<R(A0)> callback(U *obj, R (T::*method)(A0)) {
+                 ^
+./mbed-os/platform/Callback.h:3729:17: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'R (T::*)(A0)' and 'uint32_t* {aka long unsigned int*}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3740:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(const U*, R (T::*)(A0) const)
+ Callback<R(A0)> callback(const U *obj, R (T::*method)(A0) const) {
+                 ^
+./mbed-os/platform/Callback.h:3740:17: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3751:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(volatile U*, R (T::*)(A0) volatile)
+ Callback<R(A0)> callback(volatile U *obj, R (T::*method)(A0) volatile) {
+                 ^
+./mbed-os/platform/Callback.h:3751:17: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3762:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(const volatile U*, R (T::*)(A0) const volatile)
+ Callback<R(A0)> callback(const volatile U *obj, R (T::*method)(A0) const volatile) {
+                 ^
+./mbed-os/platform/Callback.h:3762:17: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3773:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(R (*)(T*, A0), U*)
+ Callback<R(A0)> callback(R (*func)(T*, A0), U *arg) {
+                 ^
+./mbed-os/platform/Callback.h:3773:17: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   candidate expects 2 arguments, 3 provided
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3784:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(R (*)(const T*, A0), const U*)
+ Callback<R(A0)> callback(R (*func)(const T*, A0), const U *arg) {
+                 ^
+./mbed-os/platform/Callback.h:3784:17: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3795:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(R (*)(volatile T*, A0), volatile U*)
+ Callback<R(A0)> callback(R (*func)(volatile T*, A0), volatile U *arg) {
+                 ^
+./mbed-os/platform/Callback.h:3795:17: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3806:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(R (*)(const volatile T*, A0), const volatile U*)
+ Callback<R(A0)> callback(R (*func)(const volatile T*, A0), const volatile U *arg) {
+                 ^
+./mbed-os/platform/Callback.h:3806:17: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3821:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(U*, R (*)(T*, A0))
+ Callback<R(A0)> callback(U *obj, R (*func)(T*, A0)) {
+                 ^
+./mbed-os/platform/Callback.h:3821:17: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'R(T*, A0)' and 'uint32_t {aka long unsigned int}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3836:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(const U*, R (*)(const T*, A0))
+ Callback<R(A0)> callback(const U *obj, R (*func)(const T*, A0)) {
+                 ^
+./mbed-os/platform/Callback.h:3836:17: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3851:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(volatile U*, R (*)(volatile T*, A0))
+ Callback<R(A0)> callback(volatile U *obj, R (*func)(volatile T*, A0)) {
+                 ^
+./mbed-os/platform/Callback.h:3851:17: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3866:17: note: candidate: template<class T, class U, class R, class A0> mbed::Callback<R(A0)> mbed::callback(const volatile U*, R (*)(const volatile T*, A0))
+ Callback<R(A0)> callback(const volatile U *obj, R (*func)(const volatile T*, A0)) {
+                 ^
+./mbed-os/platform/Callback.h:3866:17: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3877:21: note: candidate: template<class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(R (*)(A0, A1))
+ Callback<R(A0, A1)> callback(R (*func)(A0, A1) = 0) {
+                     ^
+./mbed-os/platform/Callback.h:3877:21: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   candidate expects 2 arguments, 3 provided
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3887:21: note: candidate: template<class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(const mbed::Callback<R(A0, A1)>&)
+ Callback<R(A0, A1)> callback(const Callback<R(A0, A1)> &func) {
+                     ^
+./mbed-os/platform/Callback.h:3887:21: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'const mbed::Callback<R(A0, A1)>' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3898:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(U*, R (T::*)(A0, A1))
+ Callback<R(A0, A1)> callback(U *obj, R (T::*method)(A0, A1)) {
+                     ^
+./mbed-os/platform/Callback.h:3898:21: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'R (T::*)(A0, A1)' and 'uint32_t* {aka long unsigned int*}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3909:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(const U*, R (T::*)(A0, A1) const)
+ Callback<R(A0, A1)> callback(const U *obj, R (T::*method)(A0, A1) const) {
+                     ^
+./mbed-os/platform/Callback.h:3909:21: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3920:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(volatile U*, R (T::*)(A0, A1) volatile)
+ Callback<R(A0, A1)> callback(volatile U *obj, R (T::*method)(A0, A1) volatile) {
+                     ^
+./mbed-os/platform/Callback.h:3920:21: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3931:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(const volatile U*, R (T::*)(A0, A1) const volatile)
+ Callback<R(A0, A1)> callback(const volatile U *obj, R (T::*method)(A0, A1) const volatile) {
+                     ^
+./mbed-os/platform/Callback.h:3931:21: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3942:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(R (*)(T*, A0, A1), U*)
+ Callback<R(A0, A1)> callback(R (*func)(T*, A0, A1), U *arg) {
+                     ^
+./mbed-os/platform/Callback.h:3942:21: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   candidate expects 2 arguments, 4 provided
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3953:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(R (*)(const T*, A0, A1), const U*)
+ Callback<R(A0, A1)> callback(R (*func)(const T*, A0, A1), const U *arg) {
+                     ^
+./mbed-os/platform/Callback.h:3953:21: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3964:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(R (*)(volatile T*, A0, A1), volatile U*)
+ Callback<R(A0, A1)> callback(R (*func)(volatile T*, A0, A1), volatile U *arg) {
+                     ^
+./mbed-os/platform/Callback.h:3964:21: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3975:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(R (*)(const volatile T*, A0, A1), const volatile U*)
+ Callback<R(A0, A1)> callback(R (*func)(const volatile T*, A0, A1), const volatile U *arg) {
+                     ^
+./mbed-os/platform/Callback.h:3975:21: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:3990:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(U*, R (*)(T*, A0, A1))
+ Callback<R(A0, A1)> callback(U *obj, R (*func)(T*, A0, A1)) {
+                     ^
+./mbed-os/platform/Callback.h:3990:21: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'R(T*, A0, A1)' and 'uint32_t {aka long unsigned int}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4005:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(const U*, R (*)(const T*, A0, A1))
+ Callback<R(A0, A1)> callback(const U *obj, R (*func)(const T*, A0, A1)) {
+                     ^
+./mbed-os/platform/Callback.h:4005:21: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4020:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(volatile U*, R (*)(volatile T*, A0, A1))
+ Callback<R(A0, A1)> callback(volatile U *obj, R (*func)(volatile T*, A0, A1)) {
+                     ^
+./mbed-os/platform/Callback.h:4020:21: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4035:21: note: candidate: template<class T, class U, class R, class A0, class A1> mbed::Callback<R(A0, A1)> mbed::callback(const volatile U*, R (*)(const volatile T*, A0, A1))
+ Callback<R(A0, A1)> callback(const volatile U *obj, R (*func)(const volatile T*, A0, A1)) {
+                     ^
+./mbed-os/platform/Callback.h:4035:21: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4046:25: note: candidate: template<class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(R (*)(A0, A1, A2))
+ Callback<R(A0, A1, A2)> callback(R (*func)(A0, A1, A2) = 0) {
+                         ^
+./mbed-os/platform/Callback.h:4046:25: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   candidate expects 1 argument, 4 provided
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4056:25: note: candidate: template<class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(const mbed::Callback<R(A0, A1, A2)>&)
+ Callback<R(A0, A1, A2)> callback(const Callback<R(A0, A1, A2)> &func) {
+                         ^
+./mbed-os/platform/Callback.h:4056:25: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'const mbed::Callback<R(A0, A1, A2)>' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4067:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(U*, R (T::*)(A0, A1, A2))
+ Callback<R(A0, A1, A2)> callback(U *obj, R (T::*method)(A0, A1, A2)) {
+                         ^
+./mbed-os/platform/Callback.h:4067:25: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'R (T::*)(A0, A1, A2)' and 'uint32_t* {aka long unsigned int*}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4078:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(const U*, R (T::*)(A0, A1, A2) const)
+ Callback<R(A0, A1, A2)> callback(const U *obj, R (T::*method)(A0, A1, A2) const) {
+                         ^
+./mbed-os/platform/Callback.h:4078:25: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4089:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(volatile U*, R (T::*)(A0, A1, A2) volatile)
+ Callback<R(A0, A1, A2)> callback(volatile U *obj, R (T::*method)(A0, A1, A2) volatile) {
+                         ^
+./mbed-os/platform/Callback.h:4089:25: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4100:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(const volatile U*, R (T::*)(A0, A1, A2) const volatile)
+ Callback<R(A0, A1, A2)> callback(const volatile U *obj, R (T::*method)(A0, A1, A2) const volatile) {
+                         ^
+./mbed-os/platform/Callback.h:4100:25: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4111:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(R (*)(T*, A0, A1, A2), U*)
+ Callback<R(A0, A1, A2)> callback(R (*func)(T*, A0, A1, A2), U *arg) {
+                         ^
+./mbed-os/platform/Callback.h:4111:25: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   candidate expects 4 arguments, 3 provided
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4122:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(R (*)(const T*, A0, A1, A2), const U*)
+ Callback<R(A0, A1, A2)> callback(R (*func)(const T*, A0, A1, A2), const U *arg) {
+                         ^
+./mbed-os/platform/Callback.h:4122:25: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4133:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(R (*)(volatile T*, A0, A1, A2), volatile U*)
+ Callback<R(A0, A1, A2)> callback(R (*func)(volatile T*, A0, A1, A2), volatile U *arg) {
+                         ^
+./mbed-os/platform/Callback.h:4133:25: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4144:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(R (*)(const volatile T*, A0, A1, A2), const volatile U*)
+ Callback<R(A0, A1, A2)> callback(R (*func)(const volatile T*, A0, A1, A2), const volatile U *arg) {
+                         ^
+./mbed-os/platform/Callback.h:4144:25: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4159:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(U*, R (*)(T*, A0, A1, A2))
+ Callback<R(A0, A1, A2)> callback(U *obj, R (*func)(T*, A0, A1, A2)) {
+                         ^
+./mbed-os/platform/Callback.h:4159:25: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'R(T*, A0, A1, A2)' and 'uint32_t {aka long unsigned int}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4174:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(const U*, R (*)(const T*, A0, A1, A2))
+ Callback<R(A0, A1, A2)> callback(const U *obj, R (*func)(const T*, A0, A1, A2)) {
+                         ^
+./mbed-os/platform/Callback.h:4174:25: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4189:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(volatile U*, R (*)(volatile T*, A0, A1, A2))
+ Callback<R(A0, A1, A2)> callback(volatile U *obj, R (*func)(volatile T*, A0, A1, A2)) {
+                         ^
+./mbed-os/platform/Callback.h:4189:25: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4204:25: note: candidate: template<class T, class U, class R, class A0, class A1, class A2> mbed::Callback<R(A0, A1, A2)> mbed::callback(const volatile U*, R (*)(const volatile T*, A0, A1, A2))
+ Callback<R(A0, A1, A2)> callback(const volatile U *obj, R (*func)(const volatile T*, A0, A1, A2)) {
+                         ^
+./mbed-os/platform/Callback.h:4204:25: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4215:29: note: candidate: template<class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(R (*)(A0, A1, A2, A3))
+ Callback<R(A0, A1, A2, A3)> callback(R (*func)(A0, A1, A2, A3) = 0) {
+                             ^
+./mbed-os/platform/Callback.h:4215:29: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   candidate expects 4 arguments, 3 provided
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4225:29: note: candidate: template<class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(const mbed::Callback<R(A0, A1, A2, A3)>&)
+ Callback<R(A0, A1, A2, A3)> callback(const Callback<R(A0, A1, A2, A3)> &func) {
+                             ^
+./mbed-os/platform/Callback.h:4225:29: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'const mbed::Callback<R(A0, A1, A2, A3)>' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4236:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(U*, R (T::*)(A0, A1, A2, A3))
+ Callback<R(A0, A1, A2, A3)> callback(U *obj, R (T::*method)(A0, A1, A2, A3)) {
+                             ^
+./mbed-os/platform/Callback.h:4236:29: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'R (T::*)(A0, A1, A2, A3)' and 'uint32_t* {aka long unsigned int*}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4247:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(const U*, R (T::*)(A0, A1, A2, A3) const)
+ Callback<R(A0, A1, A2, A3)> callback(const U *obj, R (T::*method)(A0, A1, A2, A3) const) {
+                             ^
+./mbed-os/platform/Callback.h:4247:29: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4258:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(volatile U*, R (T::*)(A0, A1, A2, A3) volatile)
+ Callback<R(A0, A1, A2, A3)> callback(volatile U *obj, R (T::*method)(A0, A1, A2, A3) volatile) {
+                             ^
+./mbed-os/platform/Callback.h:4258:29: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4269:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(const volatile U*, R (T::*)(A0, A1, A2, A3) const volatile)
+ Callback<R(A0, A1, A2, A3)> callback(const volatile U *obj, R (T::*method)(A0, A1, A2, A3) const volatile) {
+                             ^
+./mbed-os/platform/Callback.h:4269:29: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4280:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(R (*)(T*, A0, A1, A2, A3), U*)
+ Callback<R(A0, A1, A2, A3)> callback(R (*func)(T*, A0, A1, A2, A3), U *arg) {
+                             ^
+./mbed-os/platform/Callback.h:4280:29: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   candidate expects 5 arguments, 3 provided
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4291:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(R (*)(const T*, A0, A1, A2, A3), const U*)
+ Callback<R(A0, A1, A2, A3)> callback(R (*func)(const T*, A0, A1, A2, A3), const U *arg) {
+                             ^
+./mbed-os/platform/Callback.h:4291:29: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4302:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(R (*)(volatile T*, A0, A1, A2, A3), volatile U*)
+ Callback<R(A0, A1, A2, A3)> callback(R (*func)(volatile T*, A0, A1, A2, A3), volatile U *arg) {
+                             ^
+./mbed-os/platform/Callback.h:4302:29: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4313:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(R (*)(const volatile T*, A0, A1, A2, A3), const volatile U*)
+ Callback<R(A0, A1, A2, A3)> callback(R (*func)(const volatile T*, A0, A1, A2, A3), const volatile U *arg) {
+                             ^
+./mbed-os/platform/Callback.h:4313:29: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4328:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(U*, R (*)(T*, A0, A1, A2, A3))
+ Callback<R(A0, A1, A2, A3)> callback(U *obj, R (*func)(T*, A0, A1, A2, A3)) {
+                             ^
+./mbed-os/platform/Callback.h:4328:29: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'R(T*, A0, A1, A2, A3)' and 'uint32_t {aka long unsigned int}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4343:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(const U*, R (*)(const T*, A0, A1, A2, A3))
+ Callback<R(A0, A1, A2, A3)> callback(const U *obj, R (*func)(const T*, A0, A1, A2, A3)) {
+                             ^
+./mbed-os/platform/Callback.h:4343:29: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4358:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(volatile U*, R (*)(volatile T*, A0, A1, A2, A3))
+ Callback<R(A0, A1, A2, A3)> callback(volatile U *obj, R (*func)(volatile T*, A0, A1, A2, A3)) {
+                             ^
+./mbed-os/platform/Callback.h:4358:29: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4373:29: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3> mbed::Callback<R(A0, A1, A2, A3)> mbed::callback(const volatile U*, R (*)(const volatile T*, A0, A1, A2, A3))
+ Callback<R(A0, A1, A2, A3)> callback(const volatile U *obj, R (*func)(const volatile T*, A0, A1, A2, A3)) {
+                             ^
+./mbed-os/platform/Callback.h:4373:29: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4384:33: note: candidate: template<class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(R (*)(A0, A1, A2, A3, A4))
+ Callback<R(A0, A1, A2, A3, A4)> callback(R (*func)(A0, A1, A2, A3, A4) = 0) {
+                                 ^
+./mbed-os/platform/Callback.h:4384:33: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   candidate expects 5 arguments, 3 provided
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4394:33: note: candidate: template<class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(const mbed::Callback<R(A0, A1, A2, A3, A4)>&)
+ Callback<R(A0, A1, A2, A3, A4)> callback(const Callback<R(A0, A1, A2, A3, A4)> &func) {
+                                 ^
+./mbed-os/platform/Callback.h:4394:33: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'const mbed::Callback<R(A0, A1, A2, A3, A4)>' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4405:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(U*, R (T::*)(A0, A1, A2, A3, A4))
+ Callback<R(A0, A1, A2, A3, A4)> callback(U *obj, R (T::*method)(A0, A1, A2, A3, A4)) {
+                                 ^
+./mbed-os/platform/Callback.h:4405:33: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'R (T::*)(A0, A1, A2, A3, A4)' and 'uint32_t* {aka long unsigned int*}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4416:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(const U*, R (T::*)(A0, A1, A2, A3, A4) const)
+ Callback<R(A0, A1, A2, A3, A4)> callback(const U *obj, R (T::*method)(A0, A1, A2, A3, A4) const) {
+                                 ^
+./mbed-os/platform/Callback.h:4416:33: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4427:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(volatile U*, R (T::*)(A0, A1, A2, A3, A4) volatile)
+ Callback<R(A0, A1, A2, A3, A4)> callback(volatile U *obj, R (T::*method)(A0, A1, A2, A3, A4) volatile) {
+                                 ^
+./mbed-os/platform/Callback.h:4427:33: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4438:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(const volatile U*, R (T::*)(A0, A1, A2, A3, A4) const volatile)
+ Callback<R(A0, A1, A2, A3, A4)> callback(const volatile U *obj, R (T::*method)(A0, A1, A2, A3, A4) const volatile) {
+                                 ^
+./mbed-os/platform/Callback.h:4438:33: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4449:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(R (*)(T*, A0, A1, A2, A3, A4), U*)
+ Callback<R(A0, A1, A2, A3, A4)> callback(R (*func)(T*, A0, A1, A2, A3, A4), U *arg) {
+                                 ^
+./mbed-os/platform/Callback.h:4449:33: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   candidate expects 6 arguments, 3 provided
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4460:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(R (*)(const T*, A0, A1, A2, A3, A4), const U*)
+ Callback<R(A0, A1, A2, A3, A4)> callback(R (*func)(const T*, A0, A1, A2, A3, A4), const U *arg) {
+                                 ^
+./mbed-os/platform/Callback.h:4460:33: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4471:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(R (*)(volatile T*, A0, A1, A2, A3, A4), volatile U*)
+ Callback<R(A0, A1, A2, A3, A4)> callback(R (*func)(volatile T*, A0, A1, A2, A3, A4), volatile U *arg) {
+                                 ^
+./mbed-os/platform/Callback.h:4471:33: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4482:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(R (*)(const volatile T*, A0, A1, A2, A3, A4), const volatile U*)
+ Callback<R(A0, A1, A2, A3, A4)> callback(R (*func)(const volatile T*, A0, A1, A2, A3, A4), const volatile U *arg) {
+                                 ^
+./mbed-os/platform/Callback.h:4482:33: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile T' and 'uint32_t {aka long unsigned int}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4497:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(U*, R (*)(T*, A0, A1, A2, A3, A4))
+ Callback<R(A0, A1, A2, A3, A4)> callback(U *obj, R (*func)(T*, A0, A1, A2, A3, A4)) {
+                                 ^
+./mbed-os/platform/Callback.h:4497:33: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   mismatched types 'R(T*, A0, A1, A2, A3, A4)' and 'uint32_t {aka long unsigned int}'
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4512:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(const U*, R (*)(const T*, A0, A1, A2, A3, A4))
+ Callback<R(A0, A1, A2, A3, A4)> callback(const U *obj, R (*func)(const T*, A0, A1, A2, A3, A4)) {
+                                 ^
+./mbed-os/platform/Callback.h:4512:33: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4527:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(volatile U*, R (*)(volatile T*, A0, A1, A2, A3, A4))
+ Callback<R(A0, A1, A2, A3, A4)> callback(volatile U *obj, R (*func)(volatile T*, A0, A1, A2, A3, A4)) {
+                                 ^
+./mbed-os/platform/Callback.h:4527:33: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+In file included from ./mbed-os/rtos/Thread.h:29:0,
+                 from ./mbed-os/rtos/rtos.h:29,
+                 from ./mbed-os/mbed.h:37,
+                 from ./main.cpp:27:
+./mbed-os/platform/Callback.h:4542:33: note: candidate: template<class T, class U, class R, class A0, class A1, class A2, class A3, class A4> mbed::Callback<R(A0, A1, A2, A3, A4)> mbed::callback(const volatile U*, R (*)(const volatile T*, A0, A1, A2, A3, A4))
+ Callback<R(A0, A1, A2, A3, A4)> callback(const volatile U *obj, R (*func)(const volatile T*, A0, A1, A2, A3, A4)) {
+                                 ^
+./mbed-os/platform/Callback.h:4542:33: note:   template argument deduction/substitution failed:
+./main.cpp:242:134: note:   types 'const volatile U' and 'void(uint32_t*, uint32_t*, uint32_t*) {aka void(long unsigned int*, long unsigned int*, long unsigned int*)}' have incompatible cv-qualifiers
+      status = thread_led2->start(callback(com_led_2, (uint32_t *)&default_value, (uint32_t *)&default_value, (uint32_t *)&int_of_data));
+                                                                                                                                      ^
+
+[mbed] ERROR: "/usr/bin/python" returned error code 1.
+[mbed] ERROR: Command "/usr/bin/python -u /home/sebastian/Dokumente/Fachhochschule/Semester_4/Echtzeitbetriebssysteme/workspace/task_1_uart/code/mbed-os/tools/make.py -t GCC_ARM -m XMC_4500_RELAX_KIT --profile mbed-os/tools/profiles/debug.json --source . --build ./BUILD/XMC_4500_RELAX_KIT/GCC_ARM --artifact-name main" in "/home/sebastian/Dokumente/Fachhochschule/Semester_4/Echtzeitbetriebssysteme/workspace/task_1_uart/code"
+---
+Makefile:79: die Regel für Ziel „build“ scheiterte
+make: *** [build] Fehler 1
+WP-Linux @ sebastian : code > 
+

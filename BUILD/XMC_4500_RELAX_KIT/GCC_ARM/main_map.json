@@ -1,0 +1,112 @@
+[
+    {
+        "module": "[fill]", 
+        "size": {
+            ".data": 11, 
+            ".bss": 21, 
+            ".text": 338
+        }
+    }, 
+    {
+        "module": "[lib]/c.a", 
+        "size": {
+            ".data": 2548, 
+            ".bss": 94, 
+            ".text": 71415
+        }
+    }, 
+    {
+        "module": "[lib]/gcc.a", 
+        "size": {
+            ".data": 0, 
+            ".bss": 0, 
+            ".text": 7228
+        }
+    }, 
+    {
+        "module": "[lib]/misc", 
+        "size": {
+            ".data": 4, 
+            ".bss": 28, 
+            ".text": 124
+        }
+    }, 
+    {
+        "module": "[lib]/nosys.a", 
+        "size": {
+            ".data": 0, 
+            ".bss": 0, 
+            ".text": 32
+        }
+    }, 
+    {
+        "module": "[lib]/stdc++.a", 
+        "size": {
+            ".data": 141, 
+            ".bss": 5672, 
+            ".text": 167914
+        }
+    }, 
+    {
+        "module": "main.o", 
+        "size": {
+            ".data": 0, 
+            ".bss": 229, 
+            ".text": 2649
+        }
+    }, 
+    {
+        "module": "mbed-os/drivers", 
+        "size": {
+            ".data": 0, 
+            ".bss": 0, 
+            ".text": 2085
+        }
+    }, 
+    {
+        "module": "mbed-os/features", 
+        "size": {
+            ".data": 48, 
+            ".bss": 92, 
+            ".text": 44
+        }
+    }, 
+    {
+        "module": "mbed-os/hal", 
+        "size": {
+            ".data": 4, 
+            ".bss": 64, 
+            ".text": 2440
+        }
+    }, 
+    {
+        "module": "mbed-os/platform", 
+        "size": {
+            ".data": 4, 
+            ".bss": 354, 
+            ".text": 6255
+        }
+    }, 
+    {
+        "module": "mbed-os/rtos", 
+        "size": {
+            ".data": 168, 
+            ".bss": 5989, 
+            ".text": 20102
+        }
+    }, 
+    {
+        "module": "mbed-os/targets", 
+        "size": {
+            ".data": 372, 
+            ".bss": 3401, 
+            ".text": 27394
+        }
+    }, 
+    {
+        "summary": {
+            "static_ram": 19244, 
+            "total_flash": 311320
+        }
+    }
+]

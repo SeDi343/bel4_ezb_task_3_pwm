@@ -1,0 +1,26 @@
+BUILD/XMC_4500_RELAX_KIT/GCC_ARM/mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/HIDParser.o: \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/HIDParser.c \
+ BUILD/XMC_4500_RELAX_KIT/GCC_ARM/mbed_config.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/HIDParser.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/../../Common/Common.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/../../Common/Architectures.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/../../Common/BoardTypes.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/../../Common/ArchitectureSpecific.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/../../Common/CompilerSpecific.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/../../Common/Attributes.h \
+ mbed-os/targets/TARGET_Infineon/XMCLib/inc/xmc_common.h \
+ mbed-os/targets/TARGET_Infineon/XMCLib/inc/xmc_device.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/TARGET_XMC4500/device/XMC4500.h \
+ mbed-os/cmsis/TARGET_CORTEX_M/core_cm4.h \
+ mbed-os/cmsis/TARGET_CORTEX_M/cmsis_version.h \
+ mbed-os/cmsis/TARGET_CORTEX_M/cmsis_compiler.h \
+ mbed-os/cmsis/TARGET_CORTEX_M/cmsis_gcc.h \
+ mbed-os/cmsis/TARGET_CORTEX_M/mpu_armv7.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/TARGET_XMC4500/device/system_XMC4500.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/../../Common/Endianness.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/HIDReportData.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/HIDClassCommon.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/../../Core/StdDescriptors.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/../../Core/../Common/Common.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/../../Core/USBMode.h \
+ mbed-os/targets/TARGET_Infineon/TARGET_XMC4XXX/USBlib/Class/Common/../../Core/Events.h
